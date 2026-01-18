@@ -14,12 +14,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NonNull
+    @Size(max = 20)
     private String FirstName;
-
+    @NonNull
+    @Size(max = 20)
     private String SurName;
-
+    @NonNull
+    @Size(max = 20)
     private String UserName;
-
+    @NonNull
+    @Size(min = 6, max = 20)
     private String Password;
 
 

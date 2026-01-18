@@ -2,6 +2,7 @@ package com.example.user_account_service.controller;
 
 import com.example.user_account_service.entity.User;
 import com.example.user_account_service.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,7 +16,7 @@ public class UserController {
 
     @PostMapping
 
-    public User CreateUser(@RequestBody User user){
+    public User CreateUser(@Valid @RequestBody User user){
         return userService.CreateUser(user);
     }
 
@@ -27,7 +28,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-     public User updateUser(@PathVariable  Long id , @RequestBody User user){
+     public User updateUser(@PathVariable  Long id , @Valid @RequestBody User user){
         return userService.updateUser(id,user);
 
      }
