@@ -2,9 +2,12 @@ package com.example.user_account_service.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Data
 @Table(name = "users")
@@ -16,16 +19,15 @@ public class User {
 
     @NonNull
     @Size(max = 20)
-    private String FirstName;
+    private String firstName;
     @NonNull
     @Size(max = 20)
-    private String SurName;
+    private String surname;
     @NonNull
     @Size(max = 20)
-    private String UserName;
+    private String username;
     @NonNull
-    @Size(min = 6, max = 20)
-    private String Password;
+    private String password;
 
 
 
