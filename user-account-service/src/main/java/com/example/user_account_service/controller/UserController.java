@@ -1,8 +1,11 @@
 package com.example.user_account_service.controller;
 
+import com.example.user_account_service.dto.UpdatePasswordRequest;
 import com.example.user_account_service.entity.User;
 import com.example.user_account_service.service.UserService;
 import jakarta.validation.Valid;
+import org.apache.coyote.Response;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,6 +23,11 @@ public class UserController {
         return userService.CreateUser(user);
     }
 
+    @PutMapping("/{id}/password")
+    public ResponseEntity<Void> updatePassword(@PathVariable Long id , @Valid @RequestBody UpdatePasswordRequest request){
+        userService.updatePassword(id, request.getNewPassword());
+        return ResponseEntity.ok().build();
+    }
 
     @GetMapping("/{id}")
 
