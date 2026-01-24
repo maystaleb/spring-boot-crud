@@ -1,6 +1,11 @@
 package com.example.user_account_service.dto;
 
+/**
+  Request DTO for user authentication (login).
 
+  Contains the credentials required by the authentication endpoint.
+ Validation ensures that empty or missing credentials are rejected early.
+ */
 
 public class LoginRequest {
     private String username;
